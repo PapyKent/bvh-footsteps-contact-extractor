@@ -63,7 +63,6 @@ while i < frames_number-1:
         LFd = distance(global_positions[i-1][left_foot_id], global_positions[i+1][left_foot_id])
         LTd = distance(global_positions[i-1][left_toe_id], global_positions[i+1][left_toe_id])
         if treshold_check(LFd, LTd):
-            print("left step detected at frame : ", i)
             file_object.write(str(rf)+" "+str(i)+"\n")
             switch = False
             i+=5
@@ -71,7 +70,6 @@ while i < frames_number-1:
         RFd = distance(global_positions[i-1][right_foot_id], global_positions[i+1][right_foot_id])
         RTd = distance(global_positions[i-1][right_toe_id], global_positions[i+1][right_toe_id])
         if treshold_check(RFd, RTd):
-            print("right step detected at frame : ", i)
             rf = i
             switch = True
             i+=5
